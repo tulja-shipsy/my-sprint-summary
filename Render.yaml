@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sprint-summary
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: DEVREV_PAT
+        sync: false
+      - key: SLACK_BOT_TOKEN
+        sync: false
+      - key: SLACK_CHANNEL
+        sync: false
+      - key: DEVREV_VISTA_ID
+        sync: false
+      - key: API_SECRET
+        sync: false
